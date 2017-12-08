@@ -8,7 +8,6 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- *
  * @author ankushsharma
  * @date 08/12/17
  */
