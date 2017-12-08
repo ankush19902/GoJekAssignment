@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="loading_image_height">96dp</dimen>
+    <dimen name="loading_image_width">96dp</dimen>
+    <dimen name="margin_56">56dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="font_36">36sp</dimen>
+    <dimen name="margin_80">80dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="font_56">54sp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    <dimen name="font_16">16sp</dimen>
+</resources>

@@ -18,10 +18,32 @@ android {
     }
 }
 
+project.ext {
+    supportLibraryVersion = "26.1.0"
+    daggerVersion = "2.11"
+    butterKnifeVersion = "8.8.1"
+    retrofitVersion = "2.3.0"
+    constraintLayoutVersion = "1.0.2"
+    espressoVersion = "3.0.1"
+    junitVersion = "4.12"
+    runnerVersion = "1.0.1"
+    gsonCoverterVersion = "2.1.0"
+    mockitoVersion = "2.6.8"
+    okHttpInterceptorVersion = "3.4.1"
+}
+
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation "com.android.support:appcompat-v7:$project.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$project.constraintLayoutVersion"
+    implementation "com.android.support:design:$project.supportLibraryVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation "junit:junit:$project.junitVersion"
+    androidTestImplementation "com.android.support.test:runner:$project.runnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$project.espressoVersion"
+    compile "com.jakewharton:butterknife:$project.butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$project.butterKnifeVersion"
+    compile "com.android.support:recyclerview-v7:$project.supportLibraryVersion"
+    compile "com.squareup.retrofit2:retrofit:$project.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$project.gsonCoverterVersion"
+    compile "com.squareup.okhttp3:logging-interceptor:$project.okHttpInterceptorVersion"
 }
