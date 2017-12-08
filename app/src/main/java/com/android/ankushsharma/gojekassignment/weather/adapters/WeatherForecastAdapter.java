@@ -2,17 +2,15 @@ package com.android.ankushsharma.gojekassignment.weather.adapters;
 
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
-import android.text.format.DateFormat;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.ankushsharma.gojekassignment.R;
+import com.android.ankushsharma.gojekassignment.util.DateUtil;
 import com.android.ankushsharma.gojekassignment.weather.data.model.Forecastday;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -26,8 +24,6 @@ import butterknife.ButterKnife;
 public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecastAdapter.ViewHolder> {
 
     private List<Forecastday> forecastday;
-    private String datePattern = "yyyy-MM-dd";
-    private String dayPattern = "EEEE";
 
     public WeatherForecastAdapter(List<Forecastday> forecastday) {
         this.forecastday = forecastday;
@@ -52,15 +48,12 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
             }
 
             if (forecastday.getDate() != null) {
-                try {
-                    SimpleDateFormat dateFormat = new SimpleDateFormat(datePattern);
-                    Date date = dateFormat.parse(forecastday.getDate());
-                    String dayOfTheWeek = String.valueOf(DateFormat.format(dayPattern, date));
+                String dayOfTheWeek = DateUtil.getDayFromDateString(forecastday.getDate());
+                if (!TextUtils.isEmpty(dayOfTheWeek)) {
                     holder.tvDay.setText(dayOfTheWeek);
-                } catch (ParseException e) {
-                    e.printStackTrace();
                 }
             }
+
         }
     }
 
